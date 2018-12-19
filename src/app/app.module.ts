@@ -10,6 +10,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { InscriptionPage } from '../pages/inscription/inscription';
+import { LoginPage } from '../pages/login/login';
+import {UserProvider} from '../services/users';
+import { HttpClientModule } from '@angular/common/http'; 
+import { Userlist } from '../pages/list/list';
 
 @NgModule({
   declarations: [
@@ -17,10 +22,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    InscriptionPage,
+    LoginPage,
+    Userlist
   ],
   imports: [
     BrowserModule,
+        HttpClientModule,
+
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -29,10 +39,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    InscriptionPage,
+    LoginPage,
+    Userlist
   ],
   providers: [
     StatusBar,
+     UserProvider,
+
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

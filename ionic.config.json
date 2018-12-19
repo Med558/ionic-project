@@ -1,5 +1,10 @@
 {
   "name": "ionic-project",
   "integrations": {},
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integration":{},
+  "proxies":  [{
+  	"path": "/bdp",
+  	"proxyUrl": "http://localhost:9200/bdp"
+  }]
 }
