@@ -1,0 +1,12 @@
+<ion-tabs selectedIndex="2" >
+  <ion-tab *ngIf="session!=undefined" [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+  <ion-tab *ngIf="session==undefined" [root]="tab5Root"  tabTitle="Login" tabIcon="lock"></ion-tab>
+
+      <ion-tab *ngIf="session==undefined" [root]="tab4Root" tabTitle="Inscription" tabIcon="ios-contact"></ion-tab>
+
+  <ion-tab *ngIf="session!=undefined" [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
+  <ion-tab *ngIf="session!=undefined" [root]="tab6Root" tabTitle="list" tabIcon="list"></ion-tab>
+  <ion-tab *ngIf="session!=undefined" [root]="tab3Root" tabTitle="Contact" tabIcon="ios-chatbubbles-outline"></ion-tab>
+  <ion-tab *ngIf="session!=undefined" [root]="tab7Root" tabTitle="Profil" tabIcon="body"></ion-tab>
+
+</ion-tabs>

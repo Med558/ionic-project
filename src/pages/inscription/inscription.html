@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Inscription</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    
+      <form [formGroup]="f" (ngSubmit)="logForm()">
+                      <ion-label><h2>Formulaire d'inscription</h2></ion-label>
+  
+                       <ion-item>
+          <ion-label>ID</ion-label>
+          <ion-input type="text" formControlName="id"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Login</ion-label>
+          <ion-input type="text" formControlName="login"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nom</ion-label>
+          <ion-input type="text" formControlName="nom"></ion-input>
+        </ion-item>
+        <ion-item>
+  
+          <ion-label>Prenom</ion-label>
+          <ion-input type="text" formControlName="prenom"></ion-input>
+        </ion-item>
+        <ion-item>
+  
+          <ion-label>Tel</ion-label>
+          <ion-input type="text" formControlName="tel"></ion-input>
+        </ion-item>
+              <ion-item>
+  
+          <ion-label>Email</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+              <ion-item>
+  
+          <ion-label>Password</ion-label>
+          <ion-input type="Password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-list radio-group formControlName="avatar" >
+
+            <ion-list-header>
+              Choisir Votre Avatar
+            </ion-list-header>
+          
+            <ion-item>
+              <ion-label ><ion-img width="25" heigth="25" src="../../assets/imgs/1.jpg"></ion-img></ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label ><ion-img width="25" heigth="25" src="../../assets/imgs/2.jpg"></ion-img></ion-label>
+                <ion-radio value="2"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label ><ion-img width="25" heigth="25" src="../../assets/imgs/3.jpg"></ion-img></ion-label>
+                <ion-radio value="3"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label ><ion-img width="25" heigth="25" src="../../assets/imgs/4.jpg"></ion-img></ion-label>
+                <ion-radio value="4"></ion-radio>
+              </ion-item>
+              <ion-item>
+                  <ion-label ><ion-img width="25" heigth="25" src="../../assets/imgs/5.jpg"></ion-img></ion-label>
+                  <ion-radio value="5"></ion-radio>
+                </ion-item>
+          
+          </ion-list>
+  
+        <button ion-button type="submit" [disabled]="!f.valid">Submit</button>
+      </form>
+
+  
+  </ion-content>
+  
