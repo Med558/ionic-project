@@ -18,8 +18,8 @@ return this.http.get( '/bdd/users/_search',{headers:this.header});
 
 add(users){
 	let url= '/bdd/users/'+ users.id;
-	return this.http.post(url,{"login":users.login,"name":users.nom,"prenom":users.prenom,"tel":users.tel,"email":users.email,
-	"password":users.password,"image":users.avatar}, {headers: this.header});
+	return this.http.post(url,{"id":users.id,"login":users.login,"name":users.nom,"prenom":users.prenom,"tel":users.tel,"email":users.email,
+	"password":users.password,"image":users.avatar,"adresse":users.adresse}, {headers: this.header});
 }
 login(users)
     {return this.http.get('/bdd/users/_search?q=login:'+users.login,{headers: this.header});
@@ -35,8 +35,10 @@ fillForm(id){
 
 
 }
-addpub(user){
-	let url= '/bdd/publication/'+user.id;
-	return this.http.post(url,{"login":localStorage.getItem('login'),"publication":user.publication}, {headers: this.header});
+edit(id){
+	let url= '/bdd/users/'+id;
+	return this.http.get( url,{headers:this.header});
+
+
 }
 }

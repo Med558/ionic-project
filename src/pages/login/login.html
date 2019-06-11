@@ -1,13 +1,9 @@
-<ion-header>
-    <ion-navbar>
-      <ion-title>Login</ion-title>
-    </ion-navbar>
-  </ion-header>
+
   
-  <ion-content padding>
+  <ion-content padding class="images">
     
       <form [formGroup]="loginForm" (ngSubmit)="login()">
-                      <ion-label><h2>LoginPage</h2></ion-label>
+                      <ion-label id="l"><h2>LoginPage</h2></ion-label>
         <ion-item>
             
     
@@ -23,10 +19,10 @@
         </ion-item>
          
   
-        <button ion-button type="submit" [disabled]="!loginForm.valid">Submit</button>
+        <button ion-button full type="submit" [disabled]="!loginForm.valid">Se connecter</button>
       </form>
       <form [formGroup]="toinscritForm" (ngSubmit)="toinscription()">
-        <button ion-button type="submit" [disabled]="!toinscritForm.valid" >Inscription</button>
+        <button ion-button full type="submit" [disabled]="!toinscritForm.valid" >Inscription</button>
 
       </form>
   

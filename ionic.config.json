@@ -9,7 +9,12 @@
     {
       "path": "/bdd",
       "proxyUrl": "http://localhost:9200/bdd"
+    },
+    {
+      "path": "/bdpub",
+      "proxyUrl": "http://localhost:9200/bdpub"
     }
+
     
   ]
 }

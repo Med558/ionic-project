@@ -6,8 +6,9 @@ import { Userlist } from '../list/list';
 import { InscriptionPage } from '../inscription/inscription';
 import { NgZone  } from '@angular/core';
 import { Events } from 'ionic-angular';
+import { HomePage } from '../home/home';
 @Component({
-  selector: 'page-contact',
+  selector: 'page-login',
   templateUrl: 'login.html'
 })
 export class LoginPage {
@@ -50,7 +51,7 @@ export class LoginPage {
             localStorage.setItem('login',this.loginlist[0]._source.login);
            
             console.log("true");
-            this.navCtrl.push(Userlist);
+            this.navCtrl.push(HomePage);
             window.location.reload();
 
           }else{alert("password invalide")}

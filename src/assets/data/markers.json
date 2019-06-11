@@ -1,44 +1,30 @@
 [
 
     {
-        "Latitude":35.836728 ,
-        "Longitude":10.635455 ,
+        "Latitude":36.4560600 ,
+        "Longitude":10.7376300 ,
         "name": "Abou Nawas Nejma Hotel" ,
-        "content": "Nejma palace"
+        "adresse": "nabeul"
   
     },
 
     {
-        "Latitude":35.841224 ,
-        "Longitude":10.629599 ,
+        "Latitude":35.8253900 ,
+        "Longitude":10.6369900 ,
         "name": "Hotel Riadh Palm" ,
-        "content": "Riadh palace"
-  
+         "adresse": "Sousse"
+
     },
 
     {
-        "Latitude":35.842955 ,
-        "Longitude":10.627465 ,
+        "Latitude":36.817362 ,
+        "Longitude": 10.177990 ,
         "name": "Movenpick Resort" ,
-        "content": "Movenpick palace"
-  
-    },
-
-    {
-        "Latitude":35.851846 ,
-        "Longitude":10.617925 ,
-        "name": "Disco Bora Bora" ,
-        "content": "Bora palace"
-  
-    },
-
-    {
-        "Latitude":35.853354 ,
-        "Longitude":10.616336 ,
-        "name": "Disco Bora Bora" ,
-        "content": "Bora palace"
+        "adresse": "Tunis"
   
     }
+
+   
 
 
 ]

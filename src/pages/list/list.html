@@ -1,37 +1,84 @@
-<ion-header>
-    <ion-navbar>
-      <ion-title>
-        Liste des utilisateurs
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-
-<ion-content padding>
-    <h3>Users</h3>
-    <ion-grid>
-        <ion-row>
-        
-            <ion-col><b>Login</b></ion-col>
-            <ion-col><b>Nom</b></ion-col>
-            <ion-col><b>Prenom</b></ion-col>
-            <ion-col><b>Tel</b></ion-col>
-            <ion-col><b>Email</b></ion-col>
-         <ion-col><b>Image</b></ion-col> 
-        </ion-row>
-        <ion-row text-wrap *ngFor="let user of userlist">
-            
-            <ion-col>{{user._source.login}}</ion-col>
-            <ion-col>{{user._source.name}}</ion-col>
-            <ion-col>{{user._source.prenom}}</ion-col>
-            <ion-col>{{user._source.tel}}</ion-col>
-            <ion-col>{{user._source.email}}</ion-col>
-          <ion-col>
-<ion-img width="80" height="80" src="../../assets/imgs/{{user._source.image}}.jpg"></ion-img>       
-</ion-col> 
-<ion-col> <button ion-button [navPush]="pushPage" [navParams] ="{'id':user._id }">Consulter</button></ion-col>
-</ion-row>
-    </ion-grid>
+<ion-content padding class="images">
     
-    <button ion-button   (click)="logOff()" >Logout</button>
+      
+    <ion-img width="200" height="200" src="../../assets/imgs/{{userImage}}.jpg"></ion-img>       
+    
+    <br>
+    <br>
+    <br>
+    
+      <table>
+        <tr>
+          <th> <h2 id="l">Nom </h2></th>
+          <td> <h3 id="l2">{{userName}}</h3> </td>
+    
+        </tr>
+        <br>
+        <tr>
+          <th> <h2 id="l">Prenom </h2></th>
+          <td> <h3 id="l2">{{userPrenom}}</h3> </td>
+    
+        </tr>
+    <br>
+        <tr>
+          <th> <h2 id="l">Email </h2></th>
+          <td> <h3 id="l2">{{userEmail}}</h3> </td>
+    
+        </tr>
+        <br>
+        <tr>
+          <th> <h2 id="l">Tel </h2></th>
+          <td> <h3 id="l2">{{userTel}}</h3> </td>
+    
+        </tr>
+    <br>
+        <tr>
+          <th> <h2 id="l">Adresse </h2></th>
+          <td> <h3 id="l2">{{userAdresse}}</h3> </td>
+    
+        </tr>
+    
+    
+      </table>
+      <h2 id="l2">Location </h2>
 
-</ion-content>>
+                 <ion-content padding class="images">
+     <div #map id="map" style="height:80%" > </div>
+     
+    
+    </ion-content>   
+    <ion-grid>
+      <h3 id="l2">Dérnier publication de {{userName}} </h3>
+ 
+       <ion-row text-wrap *ngFor="let pub of publist">
+           <br>
+         <h2 id="l">{{pub._source.userLogin}} <br></h2> 
+                     
+ <br>
+           <input type="text" value="{{pub._source.publication}}" disabled>
+      <br>
+ </ion-row>
+   </ion-grid>    
+        
+    </ion-content>
+    <style type="text/css">
+    
+      h3{
+        color: #190718;
+      }
+      h2{
+        color: #0B0B61;
+      }
+    
+    
+    ion-img{
+          display: block;
+    
+    margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+         }
+    
+    
+    </style>

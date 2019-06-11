@@ -3,13 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, NavController } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { InscriptionPage } from '../pages/inscription/inscription';
 import { LoginPage } from '../pages/login/login';
 import {UserProvider} from '../services/users';
@@ -19,26 +17,29 @@ import { HttpModule } from '@angular/http';
 import { NativeGeocoder,NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 import 'rxjs/add/operator/map';
 import { GeocoderProvider } from '../providers/geocoder/geocoder';
-import { VoirProfil } from '../pages/list/voirprofil';
 import { UserProfil } from '../pages/profil/profil';
-import { Publication } from '../pages/tabs/publication/publication';
+import { EditPage } from '../pages/edit/edit';
+import { PubProvider } from '../services/pub';
+import { UserLogout } from '../pages/logout/logout';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Splash } from '../pages/splash/splash';
 
 
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
     ContactPage,
     HomePage,
     TabsPage,
     InscriptionPage,
     LoginPage,
     Userlist,
-    VoirProfil,
     UserProfil,
-    Publication
+    UserLogout,
+    Splash,
+    EditPage
   ],
   imports: [
     BrowserModule,
@@ -50,20 +51,21 @@ import { Publication } from '../pages/tabs/publication/publication';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
     ContactPage,
     HomePage,
     TabsPage,
+    Splash,
     InscriptionPage,
     LoginPage,
     Userlist,
-    VoirProfil,
     UserProfil,
-    Publication
+    EditPage,
+    UserLogout
   ],
   providers: [
     StatusBar,
      UserProvider,
+     PubProvider,
      
 
     SplashScreen,

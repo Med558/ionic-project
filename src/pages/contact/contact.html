@@ -7,11 +7,34 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+  <ion-header>
+  <ion-navbar>
+    <ion-title>Contact</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+    <form [formGroup]="f" (ngSubmit)="logForm()">
+                    <ion-label><h2>ContactPage</h2></ion-label>
+      <ion-item>
+          
+  
+
+        <ion-label>Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+
+
+        <ion-label>Your message</ion-label>
+        <ion-input type="text" formControlName="message"></ion-input>
+      </ion-item>
+       
+
+      <button ion-button type="submit" [disabled]="!f.valid">Envoyer</button>
+    </form>
+
+</ion-content>
+
 </ion-content>

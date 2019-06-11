@@ -1,0 +1,110 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Inscription</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    
+      <form [formGroup]="f" (ngSubmit)="logForm()">
+                      <ion-label><h2>Formulaire d'inscription</h2></ion-label>
+  
+              <ion-item>
+          <ion-label>ID</ion-label>
+          <ion-input type="text" formControlName="id" value={{userId}}></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Login</ion-label>
+          <ion-input type="text" formControlName="login" value={{userLogin}} hidden="hidden"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nom</ion-label>
+          <ion-input type="text" formControlName="nom" value={{userNom}}></ion-input>
+        </ion-item>
+        <ion-item>
+  
+          <ion-label>Prenom</ion-label>
+          <ion-input type="text" formControlName="prenom" value={{userPrenom}}></ion-input>
+        </ion-item>
+        <ion-item>
+  
+          <ion-label>Tel</ion-label>
+          <ion-input type="text" formControlName="tel" value={{userTel}}></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label>Adresse</ion-label>
+            <ion-select type="text" formControlName="adresse" >
+              <ion-option value="nabeul">Nabeul</ion-option>
+              <ion-option value="Sousse">Sousse</ion-option>
+              <ion-option value="Tunis">Tunis</ion-option>
+            </ion-select>
+        </ion-item>
+
+          <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input type="email" formControlName="email"  value={{userEmail}}></ion-input>
+        </ion-item>
+              <ion-item>
+  
+          <ion-label>Password</ion-label>
+          <ion-input type="Password" formControlName="password" value={{userPassword}}></ion-input>
+        </ion-item>
+  
+       <ion-list radio-group formControlName="avatar"  >
+
+            <ion-list-header>
+              Choisir Votre Avatar
+            </ion-list-header>
+          
+            <ion-item>
+              <ion-label ><ion-img  src="../../assets/imgs/1.jpg"></ion-img>
+              </ion-label>
+              <ion-radio value="1"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label ><ion-img  src="../../assets/imgs/2.jpg"></ion-img>
+                </ion-label>
+                <ion-radio value="2"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label ><ion-img  src="../../assets/imgs/3.jpg"></ion-img>
+                </ion-label>
+                <ion-radio value="3"></ion-radio>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label ><ion-img  src="../../assets/imgs/4.jpg"></ion-img>
+                </ion-label>
+                <ion-radio value="4"></ion-radio>
+              </ion-item>
+              <ion-item>
+                  <ion-label ><ion-img  src="../../assets/imgs/5.jpg"></ion-img>
+                  </ion-label>
+                  <ion-radio value="5"></ion-radio>
+                </ion-item>
+          
+          </ion-list>
+  
+        <button ion-button type="submit" [disabled]="!f.valid">Modifier</button>
+      </form>
+  
+  </ion-content>
+  <style type="text/css">
+
+
+ion-list ion-label {
+  height: 80px;
+}
+
+ion-img{
+  height: 60px;
+  width: 60px;
+}
+
+
+
+</style>

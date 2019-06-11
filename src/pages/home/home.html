@@ -1,17 +1,38 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content padding class="images">
+  <h3 id="l">Users</h3>
+  <ion-grid>
+      <ion-row>
+         <!-- <ion-col><b>ID</b></ion-col>-->
+         <!-- <ion-col><b>Nom</b></ion-col>
+          <ion-col><b>Prenom</b></ion-col>
+          <ion-col><b>Tel</b></ion-col>
+          <ion-col><b>Adresse</b></ion-col>-->
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+      </ion-row>
+      <ion-row text-wrap *ngFor="let user of userlist">
+          <ion-col id="l"><h4>{{user._source.login}}</h4></ion-col>
+        
+
+<ion-col> <button ion-button full [navPush]="pushPage" [navParams] ="{'id':user._id }">Consulter</button></ion-col>
+
+</ion-row>
+  </ion-grid>
+
+      <h3 id="l">Publications</h3>
+<ion-grid >
+      <ion-row text-wrap *ngFor="let pub of publist">
+          <br>
+      <ion-col id="l">  <h2>  {{pub._source.userLogin}} <br></h2> </ion-col> 
+                    
+
+         <ion-col > <input type="text" value="{{pub._source.publication}}" disabled> </ion-col> 
+     <br>
+</ion-row>
+  </ion-grid>
+  <ion-content padding class="images">
+<h2 id="l">Our adresses</h2>
+<div #map id="map" style="height:80%" > </div>
 </ion-content>
+  <!--<button ion-button   (click)="logOff()" >Logout</button>-->
+
+</ion-content>>

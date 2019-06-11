@@ -1,56 +1,71 @@
-<ion-content padding>
+<ion-content padding class="images">
     
     <img width="100" height="150" src="../../assets/imgs/{{userImage}}.jpg">
     <br>
     <br>
     <br>
     
-      <table width="2000" width="2000">
+      <table >
           <tr>
-              <th> <h2>Nom </h2></th>
-              <td> <h3>{{userName}}</h3> </td>
+              <th> <h2 id="l">Nom </h2></th>
+              <td> <h3 id="l2">{{userName}}</h3> </td>
     
           </tr>
           <br>
           <tr>
-              <th> <h2>Prenom </h2></th>
-              <td> <h3>{{userPrenom}}</h3> </td>
+              <th> <h2 id="l">Prenom </h2></th>
+              <td> <h3 id="l2">{{userPrenom}}</h3> </td>
     
           </tr>
     <br>
           <tr>
-              <th> <h2>Email </h2></th>
-              <td> <h3>{{userEmail}}</h3> </td>
+              <th> <h2 id="l">Email </h2></th>
+              <td> <h3 id="l2">{{userEmail}}</h3> </td>
     
           </tr>
           <br>
           <tr>
-              <th> <h2>Tel </h2></th>
-              <td> <h3>{{userTel}}</h3> </td>
+              <th> <h2 id="l">Tel </h2></th>
+              <td> <h3 id="l2">{{userTel}}</h3> </td>
     
           </tr>
+          <br>
+          <tr>
+              <th> <h2 id="l">Adresse </h2></th>
+              <td> <h3 id="l2">{{userAdresse}}</h3> </td>
+    
+          </tr>
+
+          
     <br>
          
     
+<button ion-button full [navPush]="edit" [navParams] ="{'id':userId }">Modifier</button>
     
       </table>
-               
-      
+      <h3 id="l2">Mes publications </h3>
+   
+      <ion-row text-wrap *ngFor="let pub of publist">
+            <br>
+                      
+  <br>
+            <input type="text" value="{{pub._source.publication}}" disabled>
+       <br>
+       <button ion-button full [navPush]="editp" [navParams] ="{'id':pub._id }">Supprimer</button>
+
+  </ion-row>
     
-        <form [formGroup]="f" (ngSubmit)="addpub()">
-              <ion-label><h2>Ajouter une publication</h2></ion-label>
-              <ion-item>
-                <ion-label>ID publication</ion-label>
-                <ion-input type="text" formControlName="id" placeholder="merci de donner un id pour votre publication" ></ion-input>
-              </ion-item>
+        <form [formGroup]="f" (ngSubmit)="addpubli()">
+              <ion-label><h2 id="l2">Ajouter une publication</h2></ion-label>
+              
+          
           <ion-item>
-            <ion-label>Ecrire votre publication</ion-label>
             <ion-textarea placeholder="Ecrire Votre publication" formControlName="publication"></ion-textarea>
           </ion-item>
-          <button ion-button type="submit" [disabled]="!f.valid">Submit</button>
+          <button ion-button full type="submit" [disabled]="!f.valid">Publier</button>
         </form>
   
-    
+        
     
     
         

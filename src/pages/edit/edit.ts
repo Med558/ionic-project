@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { NavController, AlertController,NavParams } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {UserProvider} from '../../services/users';
-import { LoginPage } from '../login/login';
+import { UserProfil } from '../profil/profil';
+import {PubProvider} from '../../services/pub';
 
 @Component({
-  selector: 'page-inscription',
-  templateUrl: 'inscription.html'
+  selector: 'page-edit',
+  templateUrl: 'edit.html'
 })
-export class InscriptionPage {
+export class EditPage {
 
   private f:FormGroup;
     userId:string;
@@ -23,13 +24,16 @@ userPassword:string;
 userAdresse:string;
 
   constructor(public navCtrl: NavController ,private formBuilder: FormBuilder,private users:UserProvider,
-  public alertCtrl: AlertController,public navParams: NavParams) {
+  public alertCtrl: AlertController,public navParams: NavParams,private pub:PubProvider) {
 
+    this.pub.delete(this.navParams.get('id')).subscribe((result:any)=>{
+      window.location.reload();
+    });
 
 
 this.users.edit(this.navParams.get('id')).subscribe((result:any)=>{
   this.userId=result._id;
-  this.userLogin=result._source.login
+  this.userLogin=localStorage.getItem('login');
 
   this.userNom=result._source.name;
   this.userPrenom=result._source.prenom;
@@ -42,7 +46,6 @@ this.users.edit(this.navParams.get('id')).subscribe((result:any)=>{
   this.userImage=result._source.image;
 
 });
-
 this.f = this.formBuilder.group({
               id: ['', Validators.required],
 
@@ -63,26 +66,20 @@ this.f = this.formBuilder.group({
  logForm(){
  this.users.add(this.f.value).subscribe((result:any)=>{
  let alert = this.alertCtrl.create({
+
     
- title: 'Inscription',
+ title: 'Modification',
             
 subTitle: 'SUCCESS',
    
          buttons: ['Ok']
         });
-     
+                // window.location.reload();
+
       alert.present();
-        this.navCtrl.push(LoginPage);
+                // window.location.reload();
 
  });
-
   }
-  
-
-
-  
-  }
-   
-
-
+}
 

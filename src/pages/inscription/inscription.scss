@@ -1,3 +1,15 @@
 .label-img{
     font-size: 3.0em !important;
     }
+    page-inscription {
+    
+        .images{
+            background-image: url('../assets/imgs/bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        } 
+        #l{
+            color: white;
+        }
+    }
